@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiPrecisionRootFinding", "MultiPrecisionRootFinding\MultiPrecisionRootFinding.csproj", "{81D5B6C6-7CF5-4EFE-A37D-F18F13C20767}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiPrecisionRootFindingTest", "MultiPrecisionRootFindingTest\MultiPrecisionRootFindingTest.csproj", "{E9A6C36D-3395-416F-90DF-EA3D2E066BAC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{81D5B6C6-7CF5-4EFE-A37D-F18F13C20767} = {81D5B6C6-7CF5-4EFE-A37D-F18F13C20767}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81D5B6C6-7CF5-4EFE-A37D-F18F13C20767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81D5B6C6-7CF5-4EFE-A37D-F18F13C20767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81D5B6C6-7CF5-4EFE-A37D-F18F13C20767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81D5B6C6-7CF5-4EFE-A37D-F18F13C20767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A6C36D-3395-416F-90DF-EA3D2E066BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A6C36D-3395-416F-90DF-EA3D2E066BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A6C36D-3395-416F-90DF-EA3D2E066BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A6C36D-3395-416F-90DF-EA3D2E066BAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FC98E55-5653-4F0A-8B70-DE8C23643D52}
+	EndGlobalSection
+EndGlobal
