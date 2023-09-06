@@ -22,7 +22,7 @@ namespace MultiPrecisionRootFinding {
                 x = MultiPrecision<N>.Ldexp(x1 + x2, -1);
                 MultiPrecision<N> dx = x1 - x2;
 
-                if (dx.IsZero || x.Exponent - dx.Exponent > accurate_bits) {
+                if (MultiPrecision<N>.IsZero(dx) || x.Exponent - dx.Exponent > accurate_bits) {
                     if (convergenced) {
                         break;
                     }

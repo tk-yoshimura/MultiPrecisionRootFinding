@@ -28,7 +28,7 @@ namespace MultiPrecisionRootFinding {
                 MultiPrecision<N> y = f(x);
                 MultiPrecision<N> dx = Delta(x, y, x_prev, y_prev);
 
-                if (dx.IsNaN) {
+                if (MultiPrecision<N>.IsNaN(dx)) {
                     break;
                 }
 
@@ -46,7 +46,7 @@ namespace MultiPrecisionRootFinding {
                 x += dx;
                 dx_prev = dx;
 
-                if (dx.IsZero || x.Exponent - dx.Exponent > accurate_bits) {
+                if (MultiPrecision<N>.IsZero(dx) || x.Exponent - dx.Exponent > accurate_bits) {
                     if (convergenced) {
                         break;
                     }
@@ -57,7 +57,7 @@ namespace MultiPrecisionRootFinding {
                     convergenced = false;
                 }
 
-                if (!x.IsFinite) {
+                if (!MultiPrecision<N>.IsFinite(x)) {
                     break;
                 }
 

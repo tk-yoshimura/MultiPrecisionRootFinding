@@ -30,7 +30,7 @@ namespace MultiPrecisionRootFinding {
                 x += dx;
                 dx_prev = dx;
 
-                if (dx.IsZero || x.Exponent - dx.Exponent > accurate_bits) {
+                if (MultiPrecision<N>.IsZero(dx) || x.Exponent - dx.Exponent > accurate_bits) {
                     if (convergenced) {
                         break;
                     }
@@ -41,7 +41,7 @@ namespace MultiPrecisionRootFinding {
                     convergenced = false;
                 }
 
-                if (!x.IsFinite) {
+                if (!MultiPrecision<N>.IsFinite(x)) {
                     break;
                 }
 
@@ -92,7 +92,7 @@ namespace MultiPrecisionRootFinding {
                     x = xrange.max;
                 }
 
-                if (dx.IsZero || x.Exponent - dx.Exponent > accurate_bits) {
+                if (MultiPrecision<N>.IsZero(dx) || x.Exponent - dx.Exponent > accurate_bits) {
                     if (convergenced) {
                         break;
                     }
@@ -103,7 +103,7 @@ namespace MultiPrecisionRootFinding {
                     convergenced = false;
                 }
 
-                if (!x.IsFinite) {
+                if (!MultiPrecision<N>.IsFinite(x)) {
                     break;
                 }
 
