@@ -1,5 +1,5 @@
 # MultiPrecisionRootFinding
- MultiPrecision Root Finding Method Implements
+ MultiPrecision Root Finding Method Implements 
 
 ## Requirement
 .NET 8.0  
