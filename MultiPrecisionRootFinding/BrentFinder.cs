@@ -17,7 +17,7 @@ namespace MultiPrecisionRootFinding {
 
             accurate_bits = accurate_bits > 0 ? accurate_bits : MultiPrecision<N>.Bits - 2;
 
-            MultiPrecision<N> y1 = f(x1), y2 = f(x2), xc = 0d, yc = 0d;
+            MultiPrecision<N> y1 = f(x1), y2 = f(x2), xc = MultiPrecision<N>.Zero, yc = MultiPrecision<N>.Zero;
 
             if (MultiPrecision<N>.IsZero(y1)) {
                 return x1;
@@ -30,7 +30,7 @@ namespace MultiPrecisionRootFinding {
                 throw new ArithmeticException($"invalid interval: sgn(f(x1)) == sgn(f(x2))");
             }
 
-            MultiPrecision<N> dx_prev = 0, dx = 0;
+            MultiPrecision<N> dx_prev = MultiPrecision<N>.Zero, dx = MultiPrecision<N>.Zero;
 
             while (iters != 0) {
                 if (!MultiPrecision<N>.IsZero(y1) && !MultiPrecision<N>.IsZero(y2) && (y1.Sign != y2.Sign)) {
