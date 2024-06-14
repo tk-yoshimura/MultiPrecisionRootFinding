@@ -8,13 +8,21 @@ namespace MultiPrecisionRootFinding {
             int iters = -1, int accurate_bits = -1) {
 
             if (accurate_bits > MultiPrecision<N>.Bits - 2) {
-                throw new ArgumentOutOfRangeException(nameof(accurate_bits), $"{nameof(accurate_bits)} <= {MultiPrecision<N>.Bits - 2}");
+                throw new ArgumentOutOfRangeException(nameof(accurate_bits), $"{nameof(accurate_bits)} <= 1e-30");
+            }
+
+            if (!MultiPrecision<N>.IsFinite(x1) || !MultiPrecision<N>.IsFinite(x2)) {
+                return MultiPrecision<N>.NaN;
             }
 
             accurate_bits = accurate_bits > 0 ? accurate_bits : MultiPrecision<N>.Bits - 2;
             bool convergenced = false;
 
             MultiPrecision<N> x = MultiPrecision<N>.Ldexp(x1 + x2, -1), y1 = f(x1), y2 = f(x2);
+
+            if (y1.Sign == y2.Sign) {
+                throw new ArithmeticException($"invalid interval: sgn(f(x1)) == sgn(f(x2))");
+            }
 
             while (iters != 0) {
                 (x1, y1, x2, y2, bool success) = Iteration(f, x1, y1, x2, y2);

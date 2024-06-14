@@ -7,6 +7,10 @@ namespace MultiPrecisionRootFinding {
             MultiPrecision<N> x0,
             int iters = -1, int accurate_bits = -1, bool overshoot_decay = true, bool divergence_decay = true) {
 
+            if (!MultiPrecision<N>.IsFinite(x0)) {
+                return MultiPrecision<N>.NaN;
+            }
+
             if (accurate_bits > MultiPrecision<N>.Bits - 4) {
                 throw new ArgumentOutOfRangeException(nameof(accurate_bits), $"{nameof(accurate_bits)} <= {MultiPrecision<N>.Bits - 4}");
             }

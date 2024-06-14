@@ -12,6 +12,10 @@ namespace MultiPrecisionRootFinding {
                 throw new ArgumentOutOfRangeException(nameof(accurate_bits), $"{nameof(accurate_bits)} <= {MultiPrecision<N>.Bits - 4}");
             }
 
+            if (!MultiPrecision<N>.IsFinite(x0)) {
+                return MultiPrecision<N>.NaN;
+            }
+
             MultiPrecision<N> x = x0, dx;
             MultiPrecision<N>? dx_prev = null;
 
@@ -23,7 +27,7 @@ namespace MultiPrecisionRootFinding {
 
                 if (overshoot_decay && dx_prev is not null) {
                     if (dx.Sign != dx_prev.Sign) {
-                        dx = MultiPrecision<N>.Ldexp(dx, -1);
+                        dx = MultiPrecision<N>.Ldexp(dx, -2);
                     }
                 }
 
