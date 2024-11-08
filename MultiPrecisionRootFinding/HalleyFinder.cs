@@ -49,7 +49,7 @@ namespace MultiPrecisionRootFinding {
                     break;
                 }
 
-                iters = Math.Max(-1, iters - 1);
+                iters = int.Max(-1, iters - 1);
             }
 
             return x;
@@ -111,7 +111,7 @@ namespace MultiPrecisionRootFinding {
                     break;
                 }
 
-                iters = Math.Max(-1, iters - 1);
+                iters = int.Max(-1, iters - 1);
             }
 
             return x;
